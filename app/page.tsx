@@ -1,65 +1,147 @@
-import Image from "next/image";
+import {
+  Shield,
+  Server,
+  Cloud,
+  Database,
+  Cpu,
+  Monitor,
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-[#050b14] text-white">
+      <section className="mx-auto flex min-h-screen max-w-7xl items-center justify-between px-8">
+
+        {/* LEFT */}
+
+        <div className="max-w-2xl">
+
+          <p className="mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-sky-400">
+            ALWAYS LINK SOLUTIONS
           </p>
+
+          <h1 className="text-7xl font-bold leading-[1.05] tracking-tight">
+            Technology becomes
+            <br />
+            valuable when
+            <br />
+            everything is linked.
+          </h1>
+
+          <p className="mt-10 max-w-xl text-xl leading-9 text-slate-300">
+            We link infrastructure, cloud, automation,
+            industrial systems, AI, and business applications
+            into reliable systems that quietly work.
+          </p>
+
+          <div className="mt-10 flex gap-5">
+
+            <a
+              href="#"
+              className="rounded-full bg-sky-500 px-8 py-4 font-semibold transition hover:bg-sky-400"
+            >
+              Let's Link
+            </a>
+
+            <a
+              href="#"
+              className="rounded-full border border-slate-600 px-8 py-4 font-semibold hover:border-sky-400"
+            >
+              What We Link
+            </a>
+
+          </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* RIGHT */}
+
+        <div className="relative h-[760px] w-[760px] rounded-[36px] border border-slate-800 bg-[#050918] overflow-hidden">
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,.16),transparent_70%)]" />
+
+          <div className="absolute inset-0 tech-grid" />
+          {/* LINES */}
+          <LinkLine
+  direction="vertical"
+  className="flow-top left-1/2 top-[170px] h-[140px] w-[3px] -translate-x-1/2"
+/>
+          
+
+          <LinkLine
+  className="flow-left left-[160px] top-[350px] h-[3px] w-[220px]"
+/>
+          <LinkLine className="left-[380px] top-[350px] h-[3px] w-[180px]" />
+          <LinkLine className="left-[150px] top-[600px] h-[3px] w-[400px]" />
+
+          {/* NODES */}
+          <Node icon="firewall" label="FIREWALL" className="left-1/2 top-[75px] -translate-x-1/2" />
+          <Node icon="server" label="SERVER" className="left-[55px] top-[290px]" />
+          <Node icon="cloud" label="CLOUD" className="right-[55px] top-[280px]" />
+          <Node icon="infrastructure" label="INFRASTRUCTURE" primary className="left-1/2 top-[280px] -translate-x-1/2" />
+          <Node icon="plc" label="PLC" className="left-[70px] top-[530px]" />
+          <Node icon="dashboard" label="DASHBOARD" className="right-[70px] top-[530px]" />
+
         </div>
-      </main>
+      </section>
+    </main>
+  );
+}
+function Node({
+  icon,
+  label,
+  className,
+  primary = false,
+}: {
+  icon: "firewall" | "server" | "cloud" | "infrastructure" | "plc" | "dashboard";
+  label: string;
+  className?: string;
+  primary?: boolean;
+}) {
+  const icons = {
+    firewall: Shield,
+    server: Server,
+    cloud: Cloud,
+    infrastructure: Server,
+    plc: Cpu,
+    dashboard: Monitor,
+  };
+
+  const Icon = icons[icon];
+
+  return (
+    <div className={`absolute z-10 flex flex-col items-center gap-4 ${className}`}>
+      <div
+        className={`flex items-center justify-center rounded-full border bg-[#050918] shadow-[0_0_45px_rgba(56,189,248,.55)] ${
+          primary
+            ? "h-32 w-32 border-sky-400"
+            : "h-28 w-28 border-sky-300/70"
+        }`}
+      >
+        <Icon size={primary ? 54 : 48} className="text-sky-200" />
+      </div>
+
+      <span
+  className="text-sm font-bold uppercase tracking-wider text-white">
+        {label}
+      </span>
     </div>
+  );
+}
+function LinkLine({
+  className,
+  direction = "horizontal",
+}: {
+  className?: string;
+  direction?: "horizontal" | "vertical";
+}) {
+  return (
+    <div
+      className={`absolute overflow-hidden bg-sky-400/60 shadow-[0_0_16px_rgba(56,189,248,.9)] ${className} ${
+        direction === "vertical"
+          ? "flow-vertical"
+          : "flow-horizontal"
+      }`}
+    />
   );
 }
