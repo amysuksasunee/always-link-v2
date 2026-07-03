@@ -20,7 +20,7 @@ export default function Home() {
             ALWAYS LINK SOLUTIONS
           </p>
 
-          <h1 className="text-7xl font-bold leading-[1.05] tracking-tight">
+          <h1 className="text-ุ6xl font-bold leading-[1.05] tracking-tight">
             Technology becomes
             <br />
             valuable when
@@ -56,7 +56,7 @@ export default function Home() {
 
         {/* RIGHT */}
 
-        <div className="relative h-[760px] w-[760px] rounded-[36px] border border-slate-800 bg-[#050918] overflow-hidden">
+        <div className="relative h-[620px] w-[620px] rounded-[36px] border border-slate-800 bg-[#050918] overflow-hidden">
 
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,.16),transparent_70%)]" />
 
@@ -64,23 +64,23 @@ export default function Home() {
           {/* LINES */}
           <LinkLine
   direction="vertical"
-  className="flow-top left-1/2 top-[170px] h-[140px] w-[3px] -translate-x-1/2"
+  className="flow-top left-1/2 top-[120px] h-[160px] w-[3px] -translate-x-1/2"
 />
           
 
           <LinkLine
-  className="flow-left left-[160px] top-[350px] h-[3px] w-[220px]"
+  className="flow-left left-[160px] top-[300px] h-[3px] w-[220px]"
 />
-          <LinkLine className="left-[380px] top-[350px] h-[3px] w-[180px]" />
-          <LinkLine className="left-[150px] top-[600px] h-[3px] w-[400px]" />
+          <LinkLine className="left-[380px] top-[300px] h-[3px] w-[180px]" />
+          <LinkLine className="left-[150px] top-[470px] h-[3px] w-[400px]" />
 
           {/* NODES */}
-          <Node icon="firewall" label="FIREWALL" className="left-1/2 top-[75px] -translate-x-1/2" />
-          <Node icon="server" label="SERVER" className="left-[55px] top-[290px]" />
-          <Node icon="cloud" label="CLOUD" className="right-[55px] top-[280px]" />
-          <Node icon="infrastructure" label="INFRASTRUCTURE" primary className="left-1/2 top-[280px] -translate-x-1/2" />
-          <Node icon="plc" label="PLC" className="left-[70px] top-[530px]" />
-          <Node icon="dashboard" label="DASHBOARD" className="right-[70px] top-[530px]" />
+          <Node icon="firewall" label="FIREWALL" className="left-1/2 top-[30px] -translate-x-1/2" />
+          <Node icon="server" label="SERVER" className="left-[55px] top-[240px]" />
+          <Node icon="cloud" label="CLOUD" className="right-[55px] top-[240px]" />
+          <Node icon="infrastructure" label="INFRASTRUCTURE" primary className="left-1/2 top-[230px] -translate-x-1/2" />
+          <Node icon="plc" label="PLC" className="left-[70px] top-[400px]" />
+          <Node icon="dashboard" label="DASHBOARD" className="right-[70px] top-[400px]" />
 
         </div>
       </section>
