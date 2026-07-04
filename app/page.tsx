@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import {
   Shield,
   Server,
@@ -16,11 +18,11 @@ export default function Home() {
 
         <div className="max-w-2xl">
 
-          <p className="mb-6 text-sm font-semibold uppercase tracking-[0.35em] text-sky-400">
+          <p className="mb-6 text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
             ALWAYS LINK SOLUTIONS
           </p>
 
-          <h1 className="text-ุ6xl font-bold leading-[1.05] tracking-tight">
+          <h1 className="text-4xl font-bold leading-[1.05] tracking-tight">
             Technology becomes
             <br />
             valuable when
@@ -28,7 +30,7 @@ export default function Home() {
             everything is linked.
           </h1>
 
-          <p className="mt-10 max-w-xl text-xl leading-9 text-slate-300">
+          <p className="mt-8 max-w-xl text-xl leading-9 text-slate-300">
             We link infrastructure, cloud, automation,
             industrial systems, AI, and business applications
             into reliable systems that quietly work.
@@ -47,7 +49,7 @@ export default function Home() {
               href="#"
               className="rounded-full border border-slate-600 px-8 py-4 font-semibold hover:border-sky-400"
             >
-              What We Link
+              What We Deliver
             </a>
 
           </div>
@@ -84,6 +86,7 @@ export default function Home() {
 
         </div>
       </section>
+      <WhatWeDeliver/>
     </main>
   );
 }
@@ -143,5 +146,113 @@ function LinkLine({
           : "flow-horizontal"
       }`}
     />
+  );
+}
+
+const solutions = [
+  {
+    title: "Enterprise Server Solutions",
+    description:
+      "Deployment, migration, maintenance and optimization for business-critical servers.",
+    items: ["Windows Server", "Linux Server", "Hyper-V", "VMware"],
+  },
+  {
+    title: "IT Infrastructure",
+    description:
+      "Reliable enterprise infrastructure that keeps your business connected.",
+    items: ["Switching", "Routing", "Storage", "Backup", "Virtualization"],
+  },
+  {
+    title: "Cloud Solutions",
+    description:
+      "Secure and scalable cloud environments for modern businesses.",
+    items: ["Microsoft Azure", "AWS", "Hybrid Cloud", "Cloud Migration"],
+  },
+  {
+    title: "Network Security",
+    description:
+      "Protect your business with enterprise-grade security solutions.",
+    items: ["Firewall Deployment", "Site-to-Site VPN", "Remote Access VPN"],
+  },
+  {
+    title: "Industrial Automation",
+    description: "PLC programming and industrial control systems.",
+    items: ["Basic I/O Control", "Servo & VFD Control", "Temperature Control"],
+  },
+  {
+    title: "IoT & SCADA Monitoring",
+    description:
+      "Real-time monitoring and visualization for industrial operations.",
+    items: ["IoT Monitoring", "SCADA Integration", "Production Dashboard"],
+  },
+];
+function WhatWeDeliver() {
+  const [active, setActive] = useState(0);
+const current = solutions[active];
+
+  return (
+    <section className="mx-auto max-w-7xl px-8 py-28">
+      <div className="mb-16 text-center">
+        <p className="text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
+          WHAT WE DELIVER
+        </p>
+
+        <h2 className="mt-4 text-4xl font-bold">
+          Solutions Built for Business
+        </h2>
+
+        <p className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-slate-300">
+          From enterprise infrastructure to industrial automation, we build
+          reliable systems that keep your business running.
+        </p>
+      </div>
+
+      <div className="mt-16 grid gap-12 lg:grid-cols-[420px_1fr]">
+        <div className="space-y-2">
+          {solutions.map((solution, index) => (
+  <div
+    key={solution.title}
+    onMouseEnter={() => setActive(index)}
+    onClick={() => setActive(index)}
+    className={`flex cursor-pointer items-center justify-between border-b border-slate-800 py-5 transition ${
+  active === index ? "text-sky-300" : "text-slate-300 hover:text-white"
+}`}
+  >
+    <span className="text-xl font-semibold">{solution.title}</span>
+    <span
+  className={`transition ${
+    active === index
+      ? "text-sky-300 translate-x-1"
+      : "text-slate-500"
+  }`}
+>
+  →
+</span>
+  </div>
+  ))}
+         
+  
+        </div>
+
+        <div className="rounded-[32px] border border-slate-800 bg-[#09121f] p-10">
+          <h3 className="text-3xl font-bold text-white">{current.title}</h3>
+
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            {current.description}
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {current.items.map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-sky-500/30 bg-sky-500/10 px-5 py-4 text-sky-200"
+              >
+                ✓ {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
