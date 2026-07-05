@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import {
   Shield,
   Server,
@@ -11,7 +12,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050b14] text-white">
+    <main id="top" className="min-h-screen bg-[#050b14] text-white">
       <section className="mx-auto flex min-h-screen max-w-7xl items-center justify-between px-8">
 
         {/* LEFT */}
@@ -89,6 +90,7 @@ export default function Home() {
       <WhatWeDeliver/>
       <WhyAlwaysLink />
       <LetsLink />
+      <Footer />
     </main>
   );
 }
@@ -380,5 +382,34 @@ function LetsLink() {
         </div>
       </div>
     </section>
+  );
+}
+function Footer() {
+  return (
+    <footer className="border-t border-slate-800 px-8 py-16">
+      <div className="mx-auto max-w-7xl text-center">
+        <a href="#top" className="inline-block transition hover:opacity-80">
+          <Image
+            src="/images/logo1.png"
+            alt="Always Link Solutions"
+            width={190}
+            height={120}
+            className="mx-auto"
+          />
+        </a>
+
+        <p className="mt-6 text-slate-400">
+          We link technology, so your business can focus on what matters most.
+        </p>
+<a
+  href="#top"className="mt-8 inline-flex items-center gap-2 text-sky-300 transition hover:text-sky-200"
+>
+  ↑ Link to Top
+</a>
+        <p className="mt-6 text-sm text-slate-500">
+          © 2026 Always Link Solutions Co., Ltd. All rights reserved.
+        </p>
+      </div>
+    </footer>
   );
 }
