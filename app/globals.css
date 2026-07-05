@@ -127,3 +127,6 @@ body {
   animation-delay:1.05s;
 }
 
+html {
+  scroll-behavior: smooth;
+}

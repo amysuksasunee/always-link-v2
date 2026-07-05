@@ -39,7 +39,7 @@ export default function Home() {
           <div className="mt-10 flex gap-5">
 
             <a
-              href="#contact"
+              href="#lets-link"
               className="rounded-full bg-sky-500 px-8 py-4 font-semibold transition hover:bg-sky-400"
             >
               Let's Link
@@ -87,6 +87,8 @@ export default function Home() {
         </div>
       </section>
       <WhatWeDeliver/>
+      <WhyAlwaysLink />
+      <LetsLink />
     </main>
   );
 }
@@ -251,6 +253,130 @@ const current = solutions[active];
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+function WhyAlwaysLink() {
+  return (
+    <section id="why-always-link" className="relative overflow-hidden px-8 py-28">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <p className="whitespace-nowrap text-[52px] font-black uppercase tracking-tight text-slate-800/30 md:text-[110px]">
+          Link People. Link Technology. Link Business.
+        </p>
+      </div>
+
+      <div className="relative mx-auto max-w-7xl">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
+            WHY ALWAYS LINK
+          </p>
+
+          <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl lg:text-[42px]">
+          We link technology, so your business can focus on what matters most.
+          </h2>
+
+          <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
+            Technology should empower your business—not demand your attention.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-14 max-w-4xl space-y-6 text-center text-lg leading-8 text-slate-300">
+          <p>
+            Through years of hands-on experience in enterprise IT infrastructure
+            and industrial automation, we've learned that the best systems are
+            the ones you rarely notice. They run quietly, reliably, and
+            efficiently in the background, allowing your business to operate
+            without unnecessary interruptions.
+          </p>
+
+          <p>
+            That's why we don't just implement technology—we link the right
+            infrastructure, automation, security, and business solutions into
+            one seamless ecosystem. Every solution we deliver is designed with
+            simplicity, stability, scalability, and long-term performance in
+            mind.
+          </p>
+
+          <p className="text-2xl font-semibold text-white">
+            Because when everything works together, your business moves forward
+            with confidence.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <div className="rounded-[28px] border border-slate-800 bg-[#09121f]/90 p-8 transition hover:-translate-y-1 hover:border-sky-500/50">
+            <div className="mb-6 text-4xl">🔗</div>
+            <h3 className="text-2xl font-bold text-white">Link Experience</h3>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Years of real-world experience delivering enterprise IT
+              infrastructure and industrial automation solutions across diverse
+              business environments.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] border border-slate-800 bg-[#09121f]/90 p-8 transition hover:-translate-y-1 hover:border-sky-500/50">
+            <div className="mb-6 text-4xl">⚙️</div>
+            <h3 className="text-2xl font-bold text-white">Link Expertise</h3>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Comprehensive expertise in Infrastructure, Cloud, Cybersecurity,
+              Industrial Automation, AI, and Business Systems—working together
+              as one integrated solution.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] border border-slate-800 bg-[#09121f]/90 p-8 transition hover:-translate-y-1 hover:border-sky-500/50">
+            <div className="mb-6 text-4xl">🚀</div>
+            <h3 className="text-2xl font-bold text-white">Link Performance</h3>
+            <p className="mt-5 text-lg leading-8 text-slate-300">
+              Designed for reliability, simplicity, and long-term scalability,
+              so your systems continue working quietly while your business keeps
+              growing.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-2xl font-semibold italic text-sky-200 md:text-3xl">
+            “The best systems don't ask for attention. They simply work.”
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+function LetsLink() {
+  return (
+    <section id="lets-link" className="mx-auto max-w-7xl px-8 py-28">
+      <div className="rounded-[36px] border border-slate-800 bg-[#09121f] p-10 text-center md:p-16">
+        <p className="text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
+          LET&apos;S LINK
+        </p>
+
+        <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-bold leading-tight md:text-5xl">
+          Ready to link your business with reliable technology?
+        </h2>
+
+        <p className="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
+          Tell us about your business goals, and we&apos;ll help you connect the
+          right technologies into one reliable solution.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <a
+            href="mailto:hs@alwayslinksolutions.com"
+            className="rounded-full bg-sky-500 px-8 py-4 font-semibold text-white transition hover:bg-sky-400"
+          >
+            Let&apos;s Talk
+          </a>
+
+          <a
+            href="mailto:hs@alwayslinksolutions.com"
+            className="rounded-full border border-slate-600 px-8 py-4 font-semibold text-slate-200 transition hover:border-sky-400 hover:text-white"
+          >
+            hs@alwayslinksolutions.com
+          </a>
         </div>
       </div>
     </section>
