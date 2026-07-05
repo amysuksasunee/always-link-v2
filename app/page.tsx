@@ -39,14 +39,14 @@ export default function Home() {
           <div className="mt-10 flex gap-5">
 
             <a
-              href="#"
+              href="#contact"
               className="rounded-full bg-sky-500 px-8 py-4 font-semibold transition hover:bg-sky-400"
             >
               Let's Link
             </a>
 
             <a
-              href="#"
+              href="#what-we-deliver"
               className="rounded-full border border-slate-600 px-8 py-4 font-semibold hover:border-sky-400"
             >
               What We Deliver
@@ -191,7 +191,7 @@ function WhatWeDeliver() {
 const current = solutions[active];
 
   return (
-    <section className="mx-auto max-w-7xl px-8 py-28">
+    <section id="what-we-deliver" className="mx-auto max-w-7xl px-8 py-28">
       <div className="mb-16 text-center">
         <p className="text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
           WHAT WE DELIVER
