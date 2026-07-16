@@ -13,9 +13,7 @@ import {
 export default function Home() {
   return (
     <main id="top" className="min-h-screen bg-[#050b14] text-white">
-      <section className="mx-auto flex min-h-screen max-w-7xl items-center justify-between px-8">
-
-        {/* LEFT */}
+<section className="mx-auto flex min-h-[85vh] max-w-7xl flex-col px-6 py-8 lg:min-h-screen lg:flex-row lg:items-center lg:justify-between lg:px-8">        {/* LEFT */}
 
         <div className="max-w-2xl">
 
@@ -37,31 +35,32 @@ export default function Home() {
             into reliable systems that quietly work.
           </p>
 
-          <div className="mt-10 flex gap-5">
+      <div className="mt-10 flex items-center gap-4">
+  <a
+  href="#lets-link"
+  className="flex w-[190px] items-center justify-center rounded-3xl bg-sky-500 px-6 py-4 font-semibold text-white transition hover:bg-sky-400"
+>
+  <span>Let's Link</span>
+</a>
 
-            <a
-              href="#lets-link"
-              className="rounded-full bg-sky-500 px-8 py-4 font-semibold transition hover:bg-sky-400"
-            >
-              Let's Link
-            </a>
+  <a
+  href="#what-we-deliver"
+  className="flex w-[230px] items-center justify-center rounded-3xl border border-slate-600 px-6 py-4 font-semibold text-white transition hover:border-sky-400"
+>
+  <span className="whitespace-nowrap text-sm sm:text-base">
+  What We Deliver
+</span>
+</a>
 
-            <a
-              href="#what-we-deliver"
-              className="rounded-full border border-slate-600 px-8 py-4 font-semibold hover:border-sky-400"
-            >
-              What We Deliver
-            </a>
-
-          </div>
+</div>
 
         </div>
 
         {/* RIGHT */}
 
-        <div className="relative h-[620px] w-[620px] rounded-[36px] border border-slate-800 bg-[#050918] overflow-hidden">
-
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,.16),transparent_70%)]" />
+<div className="mx-auto w-[310px] overflow-hidden lg:w-[620px]">      
+<div className="relative mt-10 -mb-[273px] h-[620px] w-[620px] shrink-0 origin-top-left scale-[0.5] rounded-[36px] border border-slate-800 bg-[#050918] overflow-hidden lg:mt-0 lg:mb-0 lg:scale-100">          
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,.16),transparent_70%)]" />
 
           <div className="absolute inset-0 tech-grid" />
           {/* LINES */}
@@ -85,6 +84,7 @@ export default function Home() {
           <Node icon="plc" label="PLC" className="left-[70px] top-[400px]" />
           <Node icon="dashboard" label="DASHBOARD" className="right-[70px] top-[400px]" />
 
+        </div>
         </div>
       </section>
       <WhatWeDeliver/>
@@ -195,7 +195,7 @@ function WhatWeDeliver() {
 const current = solutions[active];
 
   return (
-    <section id="what-we-deliver" className="mx-auto max-w-7xl px-8 py-28">
+    <section id="what-we-deliver" className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-28">
       <div className="mb-16 text-center">
         <p className="text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
           WHAT WE DELIVER
@@ -213,27 +213,33 @@ const current = solutions[active];
 
       <div className="mt-16 grid gap-12 lg:grid-cols-[420px_1fr]">
         <div className="space-y-2">
-          {solutions.map((solution, index) => (
-  <div
+  {solutions.map((solution, index) => (
+  <button
+    type="button"
     key={solution.title}
-    onMouseEnter={() => setActive(index)}
-    onClick={() => setActive(index)}
-    className={`flex cursor-pointer items-center justify-between border-b border-slate-800 py-5 transition ${
-  active === index ? "text-sky-300" : "text-slate-300 hover:text-white"
-}`}
+    onClick={() => {setActive(index);
+    }}
+    className={`flex w-full cursor-pointer items-center justify-between border-b border-slate-800 py-5 transition ${
+      active === index
+        ? "text-sky-300"
+        : "text-slate-300 hover:text-white"
+    }`}
   >
-    <span className="text-xl font-semibold">{solution.title}</span>
+    <span className="text-xl font-semibold">
+      {solution.title}
+    </span>
+
     <span
-  className={`transition ${
-    active === index
-      ? "text-sky-300 translate-x-1"
-      : "text-slate-500"
-  }`}
->
-  →
-</span>
-  </div>
-  ))}
+      className={`transition ${
+        active === index
+          ? "translate-x-1 text-sky-300"
+          : "text-slate-500"
+      }`}
+    >
+      →
+    </span>
+  </button>
+))}
          
   
         </div>
