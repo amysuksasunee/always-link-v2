@@ -195,8 +195,8 @@ function WhatWeDeliver() {
 const current = solutions[active];
 
   return (
-    <section id="what-we-deliver" className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-28">
-      <div className="mb-16 text-center">
+    <section id="what-we-deliver" className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-11">
+      <div className="mb-10 text-center">
         <p className="text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
           WHAT WE DELIVER
         </p>
@@ -211,7 +211,7 @@ const current = solutions[active];
         </p>
       </div>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-[420px_1fr]">
+      <div className="mt-10 grid gap-12 lg:grid-cols-[420px_1fr]">
         <div className="space-y-2">
   {solutions.map((solution, index) => (
   <button
@@ -244,7 +244,7 @@ const current = solutions[active];
   
         </div>
 
-        <div className="rounded-[32px] border border-slate-800 bg-[#09121f] p-10">
+        <div className="rounded-[32px] border border-slate-800 bg-[#09121f] p-8">
           <h3 className="text-3xl font-bold text-white">{current.title}</h3>
 
           <p className="mt-5 text-lg leading-8 text-slate-300">
@@ -268,7 +268,7 @@ const current = solutions[active];
 }
 function WhyAlwaysLink() {
   return (
-    <section id="why-always-link" className="relative overflow-hidden px-8 py-28">
+    <section id="why-always-link" className="relative overflow-hidden px-8 pt-20 pb-12">
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <p className="whitespace-nowrap text-[52px] font-black uppercase tracking-tight text-slate-800/30 md:text-[110px]">
           Link People. Link Technology. Link Business.
@@ -356,7 +356,7 @@ function WhyAlwaysLink() {
 }
 function LetsLink() {
   return (
-    <section id="lets-link" className="mx-auto max-w-7xl px-8 py-28">
+    <section id="lets-link" className="mx-auto max-w-7xl px-8 pt-8 pb-20">
       <div className="rounded-[36px] border border-slate-800 bg-[#09121f] p-10 text-center md:p-16">
         <p className="text-lg font-bold uppercase tracking-[0.45em] text-sky-400">
           LET&apos;S LINK
